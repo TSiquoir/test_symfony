@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+<h1>Mon blog</h1>
+
+{% for article in articles %}
+    <h3>{{ article.title }}</h3>
+    <span>{{ article.date.format('d/m/y') }}</span>
+    {% if article.image%}
+    <img src="{{ article.image }}">
+    {% endif %}
+    <p>{{ article.content }}</p>
+    
+{% endfor %}
+{% endblock %}
+
